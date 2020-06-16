@@ -1,0 +1,10 @@
+.divEdit{
+    text-align: center;
+    
+}
+.dvedit{
+    display: flex;
+    align-content: center;
+    padding: 8px;
+    padding-left: 45%;
+}

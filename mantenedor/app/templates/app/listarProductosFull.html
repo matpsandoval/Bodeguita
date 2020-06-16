@@ -1,0 +1,104 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+{% load static %}
+<Style>
+    th, td {
+  text-align: left;
+  padding: 4px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #185468;
+  color: white;
+}
+</Style>
+
+<div class="divEdit">
+    <h3 class="user">Bienvenido {{user.username}}</h3>
+    <h1 class="f">Editar Productos </h1>
+</div>
+
+
+
+<body>
+        <form class="flot" action="/listarProductosFull" method="POST">
+            <div class="divEdit">
+                <div>
+                       <h1>Buscar por Precio:</h1> 
+                </div>
+                   
+                    <input  type="number" name="precio" value="{{precio}}" style="width:100px" / >
+                    <input   type="submit" value="Buscar">
+            </div >
+
+            <div class="divEdit">
+                    <div>
+                            <h1>Buscar por Clasificación:</h1> 
+                     </div>
+                    
+                    <input  type="text" name="clasificacion" value="{{clasificacion}}" style="width:100px" / >
+                    <input  type="submit" value="Buscar">
+            </div>
+            <br>
+            <br>
+           
+           
+            
+            {% csrf_token %}
+            <div class="dvedit">
+                <input  action="/listarProductos" type="submit" value="Mostrar Todos">
+            </div>
+            
+        </form>
+    
+        
+            
+            
+                <form  role="form" enctype="multipart/form-data" action="" method="POST" id="upload-image-form">
+                    <div class="btit" id="tcen" >
+
+                        <table class="table">
+                            <tr>
+                                <th>PROVEEDOR</th>
+                                <th>CODIGO</th>
+                                <th>SKU</th>
+                                <th>NOMBRE</th>
+                                <th>DESCRIPCIÓN</th>
+                                <th>CLASIFICACIÓN</th>
+                                <th>PRECIO</th>
+                                <th>DISPONIBLE</th>
+                            </tr>
+                            {% for c in producto %}
+                            <tr>
+                                <td>{{c.proveedor}}</td>
+                                <td>{{c.codigo}}</td>
+                                <td>{{c.sku}}</td>
+                                <td>{{c.nombre}}</td>
+                                <td>{{c.descripcion}}</td>
+                                <td>{{c.clasificacion}}</td>
+                                <td>$ {{c.precio}}</td>
+                                <td>$ {{c.disponible}}</td>
+                                <td><button><a href="/editarProducto/{{c.id}}"> EDITAR</a></button></td>
+                                <td><button><a class="rb"href="/borrarProducto/{{c.id}}" onclick="return confirm('¿Seguro de borrar?');"> BORRAR</a></button></td>
+                            </tr>
+                            {% endfor%}
+                        </table>
+                    </div>
+                    
+                </form>
+            
+            
+
+            
+            
+    
+</body>
+
+
+
+
+{% endblock content %}

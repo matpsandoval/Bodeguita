@@ -1,0 +1,57 @@
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  color: rgb(210, 217, 248);
+
+ 
+}
+
+.divlogin {
+  
+  background: #185468;
+  width: 18%;
+  min-width: 250px;
+  max-height: inherit;
+  height: 25%;
+  border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border: 0px solid #000000;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.divloginpadre {
+
+  padding-top: 5%;
+  padding-bottom: 13%;
+  display : flex;
+  justify-content : center;
+  align-items : center;
+}
+
+.titulo{
+  font-size: 40px;
+  color: #185468;
+  font-style: italic;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+  margin: 0;
+ 
+
+ 
+ 
+}
+
+.bienbenida{
+  font-size: 20px;
+  color: #185468;
+  font-style: italic;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: left;
+  margin: 0;
+  margin-right: 10%;
+}
+

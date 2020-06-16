@@ -1,0 +1,96 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+{% load static %}
+<link href="{% static 'css/botonLogin.css' %}" rel="stylesheet">
+
+
+
+
+<body>
+    <h1 class="centrar" class="f">Ingresar Producto</h1>
+
+    <div id="registro" class="container">
+
+        <style>
+            .centrar{
+                text-align: left; 
+                background:#185468;
+                
+               
+               
+                margin-left: 15%;
+                width: 55%;
+                color:  rgb(210, 217, 248);
+                font-size: 35px;
+               
+            }
+            .centrar2{
+                text-align: left; 
+                background: royalblue;
+                margin-left: 20%;
+                width: 50%;
+                color: rgb(210, 217, 248);
+                font-size: 35px;
+            }
+            .tam{
+                font-size: 20px;
+            }
+        </style>
+
+        <form class="centrar" role="form" enctype="multipart/form-data" action="" method="POST" id="upload-image-form"
+            id="formularioProveedor">
+
+
+            <!-- {% csrf_token %} -->
+            <div class="centrar"class="form-group">
+
+                <label for="id_nombre">Nombre Empresa:</label>
+                {% csrf_token %}
+                {{ formProducto.proveedor}}
+
+            </div>
+
+            <!-- {{ form}} -->
+            <div class="centrar" class="form-group">
+                <label for="id_codigo">Codigo:</label><input class="tam" type="number" name="codigo" maxlength="13" required=""
+                    id="id_codigo" class="form-control" placeholder="Ingrese Código EAN">
+            </div>
+            <div class="centrar" class="form-group">
+                <label for="id_sku">Sku:</label><input class="tam" type="number" name="sku" maxlength="6" required="" id="id_sku"
+                    class="form-control" placeholder="Ingrese Código Interno">
+            </div>
+            <div class="centrar" class="form-group">
+                <label for="id_nombre">Nombre:</label><input class="tam" type="text" name="nombre" maxlength="50" required=""
+                    id="id_nombre" class="form-control" placeholder="Ingrese Nombre Producto">
+            </div>
+            <div class="centrar" class="form-group">
+                <label for="id_descripcion">Descripción:</label><input class="tam" type="text" name="descripcion" maxlength="50"
+                    required="" id="id_descripcion" class="form-control" placeholder="Ingrese Descripción">
+            </div>
+            <div class="centrar" class="form-group">
+                <label for="id_clasificasion">Clasificación:</label><input class="tam" type="text" name="clasificacion"
+                    maxlength="50" required="" id="id_clasificasion" class="form-control" placeholder="Ingrese Nombre">
+            </div>
+            <div class="centrar" class="form-group">
+                <label for="id_precio">Precio:</label><input class="tam" type="number" name="precio" maxlength="50" required=""
+                    id="id_precio" class="form-control" placeholder="Ingrese Precio">
+            </div>
+            <div class="centrar" class="form-group">
+                <label for="id_disponible">Disponible:</label><input class="tam"type="number" name="disponible" maxlength="8"
+                    required="" id="id_disponible" class="form-control" placeholder="Ingrese Unidades">
+            </div>
+
+            <div class="dvedit">
+                <button class="button" type="submit">GRABAR</button>
+            </div>
+            
+        </form>
+    </div>
+    <script src="{% static 'js/validadorform.js' %}"></script>
+</body>
+{% endblock content %}
+
+
+
+

@@ -1,0 +1,193 @@
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color:rgb(210, 217, 248);
+  background-color: #12495c;
+  ;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.button:hover {background-color: #0b2f3b}
+
+.button:active {
+  background-color: #0b2f3b;
+  box-shadow: 0 1px #666;
+  transform: translateY(4px);
+}
+
+
+.centra{
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+
+
+
+
+#divt{
+    /* border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px; */
+border: 1px solid #000000;
+padding: 5px;
+display: none;
+  }
+  
+  .A{
+   background:  rgb(210, 217, 248);;
+    width: 90px;
+    display: none;
+    
+  
+    
+  }
+  
+  .B{
+    background: #fff;
+    width: 125px;
+    display: none;
+      
+  }
+  
+  .C{
+    background:  rgb(210, 217, 248);;
+    width: 60px;
+    display: none;
+   
+  }
+  
+  .D{
+    background: #fff;
+    width: 100px;
+    display: none;
+   
+  }
+  
+  .E{
+    background: rgb(210, 217, 248);;
+    width: 100px;
+    display: none;
+   
+  }
+
+  .F{
+    background: #fff;
+    width: 100px;
+    display: none;
+   
+  }
+
+  .G{
+    background: rgb(210, 217, 248);;
+    width: 80px;
+    display: none;
+   
+  }
+
+  .H{
+    background: #fff;
+    width: 100px;
+    display: none;
+   
+  }
+
+  
+  
+  
+  #tabla{
+     margin-left: 25%;
+     color:  #185468;
+    
+  }
+  
+  #tabla .A, #tabla .B, #tabla .C, #tabla .D, #tabla .E, #tabla .F, #tabla .G, #tabla .H{
+      display: table-cell;
+  }
+  
+  
+      
+  @media screen and (max-width: 950px) {
+    #divt{
+      /* border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px; */
+  border: 1px solid #000000;
+  padding: 5px;
+ 
+    }
+    
+    .A{
+      
+     background:rgb(210, 217, 248);
+      width: 300px;
+      
+    
+      
+    }
+    
+    .B{
+      background: #fff;
+      width: 300px;
+        
+    }
+    
+    .C{
+      background: rgb(210, 217, 248);
+      width: 300px;
+     
+    }
+    
+    .D{
+      background: #fff;
+      width: 300px;
+     
+    }
+    
+    .E{
+      background: rgb(210, 217, 248);
+      width: 300px;
+     
+    }
+  
+    .F{
+      background: #fff;
+      width: 300px;
+     
+    }
+  
+    .G{
+      background:rgb(210, 217, 248);
+      width: 300px;
+     
+    }
+  
+    .H{
+      background: #fff;
+      width: 300px;
+      margin-bottom: 10%;
+     
+    }
+  
+    
+    
+    
+    #tabla{
+        width: 50%;
+        margin-left: 25%;
+        color:  #185468;
+    }
+    
+    #tabla .A, #tabla .B, #tabla .C, #tabla .D, #tabla .E, #tabla .F, #tabla .G, #tabla .H{
+        display: grid;
+    }
+    
+  }
+   

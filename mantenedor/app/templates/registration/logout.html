@@ -1,0 +1,16 @@
+
+{% extends 'app/base.html'%}
+{% block content %}
+{% load static %}
+
+
+
+
+    <h1 class="f">Salir de sesion</h1>
+    <form class="g" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="boton" >Cerrar</button>
+        
+    </form>
+{% endblock %}

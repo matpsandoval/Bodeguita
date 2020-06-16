@@ -1,0 +1,115 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+{% load static %}
+<Style>
+    th, td {
+  text-align: left;
+  padding: 4px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #185468;
+  color: white;
+}
+</Style>
+
+<div class="divEdit">
+    <h3 class="user">Bienvenido {{user.username}}</h3>
+    <h1 class="f">Editar Proveedores </h1>
+</div>
+
+<body>
+    <form action="/listarProveedoresFull" method="POST">
+
+    
+        <div>
+            <div class="divEdit">
+                <div>
+                    <h1>Buscar por Nombre:</h1>
+                </div >
+
+                <input type="text" name="nombre" value="{{nombre}}" style="width:100px" />
+                
+                    <input  class="button" type="submit" value="Buscar">
+                
+                
+            </div>
+
+            <div class="divEdit">
+                <div>
+                    <h1>Buscar por Rut:</h1>
+                </div>
+
+                <input type="text" name="rut" value="{{rut}}" style="width:100px" />
+                <input class="button" type="submit" value="Buscar">
+            </div>
+
+        </div>
+
+        {% csrf_token %}
+        <div class="dvedit">
+            <input action="/listarProveedores" type="submit" value="Mostrar Todos">
+        </div>
+    
+    </form>
+    
+    
+    <form role="form" enctype="multipart/form-data" action="" method="POST" id="upload-image-form">
+        <div class="btit" id="tcen">
+
+
+            <table class="table">
+                <tr>
+                    <th>RUN</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO PATERNO</th>
+                    <th>APELLIDO MATERNO</th>
+                    <th>TELÉFONO</th>
+                    <th>DOMICILIO</th>
+                    <th>REGIÓN</th>
+                    <th>COMUNA</th>
+                    <th>FECHA NACIMIENTO</th>
+                    <th>PRODUCTO</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                {% for c in proveedor %}
+                <tr>
+                    
+                        <td>{{c.rut}}</td>
+                        <td>{{c.nombre}}</td>
+                        <td>{{c.apellido_paterno}}</td>
+                        <td>{{c.apellido_materno}}</td>
+                        <td>{{c.telefono}}</td>
+                        <td>{{c.domicilio}}</td>
+                        <td>{{c.region}}</td>
+                        <td>{{c.comuna}}</td>
+                        <td>{{c.fecha_nacimiento}}</td>
+                        <td>{{c.producto}}</td>
+                        <td><button><a href="/editarProveedor/{{c.id}}"> EDITAR</a></button></td>
+                        <td><button><a class="rb" href="/borrarProveedor/{{c.id}}" onclick="return confirm('¿Seguro de borrar?');">BORRAR</a></button></td>
+                    
+                </tr>
+                {% endfor%}
+            </table>
+
+    </form>
+
+
+
+    
+
+
+
+</body>
+
+
+
+
+{% endblock content %}
+
+

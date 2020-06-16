@@ -1,0 +1,51 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+{% load static %}
+<link href="{% static 'css/botonLogin.css' %}" rel="stylesheet">
+<style>
+     .centrar{
+     text-align: center; 
+     background:#185468;
+     margin-left: 25%;
+     margin-right: 25%;
+     width: 55%;
+     color:  rgb(210, 217, 248);
+     font-size: 35px;
+     }
+     .centrar2{
+          text-align: center;
+          margin-left: 46%;
+          margin-right: 45%;
+          font-size: 20px;
+          
+     }
+     .centrar3{
+          background:#185468;
+          color:  rgb(210, 217, 248);
+          text-align: center;
+     }
+</style>
+<body>
+     <div class="centrar">
+          <h1 class="f">Editar Producto</h1>
+     </div>
+     <div class="centrar3">
+          <div class="centrar2">
+               <form class="g" method="POST">
+                    {{ form }}
+                    {% csrf_token %}
+                    
+               </form>
+               <br>
+               </br>
+          </div>
+     </div>
+     
+     <div class="dvedit">
+          <button class="button" type="submit" >Editar</button>
+          <button class="button" onclick="window.location.href='http://localhost:8000/listarProductosFull';">Volver</button>
+     </div>
+     
+</body>
+{% endblock content %}

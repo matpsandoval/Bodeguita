@@ -1,0 +1,56 @@
+{% extends 'app/base.html'%}
+{% block content %}
+{% load static %}
+<link href="{% static 'css/estiloFormLogin.css' %}" rel="stylesheet">
+<link href="{% static 'css/botonLogin.css' %}" rel="stylesheet">
+
+<form class="g" method="POST">
+    {% csrf_token %}
+    <!-- {{form.as_p}} -->
+
+    <div class="divloginpadre">
+        <div class="divlogin">
+            <ul>
+                <div>
+                    <h1>Acceso Usuario</h1>
+                </div>
+            </ul>
+
+            <ul>
+                <div>
+                    User
+
+                </div>
+                <div>
+
+                   
+                    {{form.username}}
+                    <br>
+                </div>
+            </ul>
+            <br>
+            <ul>
+                <div>
+                    Password
+                </div>
+                <div>
+
+                    
+
+                    {{form.password}}
+                    <br>
+                </div>
+            </ul>
+            <br>
+            <ul>
+                <button class="button">Ingresar</button>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+
+</form>
+{% endblock %}

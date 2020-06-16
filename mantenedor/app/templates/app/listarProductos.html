@@ -1,0 +1,89 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+{% load static %}
+<link href="{% static 'css/estilosTabla.css' %}" rel="stylesheet">
+
+<body>
+
+    <div>
+        <form class="centra" class="flot" action="/listarProductos" method="POST">
+
+            <div>
+                <div>
+                    <div>
+                        <h1>Buscar por Precio:</h1>
+                    </div >
+
+                    <input type="number" name="precio" value="{{precio}}" style="width:100px" />
+                    
+                        <input  class="button" type="submit" value="Buscar">
+                    
+                    
+                </div>
+
+                <div>
+                    <div>
+                        <h1>Buscar por Clasificación:</h1>
+                    </div>
+
+                    <input type="text" name="clasificacion" value="{{clasificacion}}" style="width:100px" />
+                    <input class="button" type="submit" value="Buscar">
+                </div>
+
+            </div>
+            <br>
+            <br>
+
+
+
+
+            {% csrf_token %}
+            <input class="button" action="/listarProductos" type="submit" value="Mostrar Todos">
+        </form>
+    </div>
+
+
+
+
+
+
+
+   
+   
+
+
+
+    {% for c in producto %}
+
+    
+
+    <body>
+        
+
+
+
+        <div id="tabla" id="divt">
+            <div class="A" id="divt"><strong>Proveedor:  </strong>{{c.proveedor}}</div>
+            <div class="B" id="divt"><strong>Código:  </strong>{{c.codigo}}</div>
+            <div class="C" id="divt"><strong>SKU:  </strong>{{c.sku}}</div>
+            <div class="D" id="divt"><strong>Nombre:  </strong>{{c.nombre}}</div>
+            <div class="E" id="divt"><strong>Descripción:  </strong>{{c.descripcion}}</div>
+            <div class="F" id="divt"><strong>Clasificación:  </strong>{{c.clasificacion}}</div>
+            <div class="G" id="divt"><strong>Precio:  </strong>{{c.precio}}</div>
+            <div class="H" id="divt"><strong>Disponible:  </strong>{{c.disponible}}</div>
+        </div>
+
+
+
+
+       
+    </body>
+
+    </form>
+
+
+    {% endfor%}
+
+</body>
+{% endblock content %}

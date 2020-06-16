@@ -1,0 +1,15 @@
+{% extends 'app/base.html'%}
+{% block content %}
+{% load static %}
+
+
+
+    <h1 class="f">Registrarse</h1>
+    <form class="g" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="boton" >Guardar</button>
+        <!-- <span class="boton">   </span> -->
+        
+    </form>
+{% endblock %}

@@ -1,0 +1,53 @@
+
+
+{% extends 'app/base.html' %}
+
+{% block content %}
+{% load static %}
+{% load static %}
+
+
+<div class="contenedor">
+
+        <div class="padre1">
+
+            <div class="hijo1">
+                <h1>Quienes Somos</h1>
+                <h3><p id="p1">Somos una de Empresa dedicada a la venta de abarrotes</p>
+                    <p>en formato de Supermercado</p></h3>
+
+                <div class="hijo2">
+                    <h1>Venta de productos con el mejor control de calidad</h1>
+                    <video src="{% static 'video/retro.webm' %}" width="600" height="400" autoplay muted="muted" loop>Sorry, your browser
+                        doesn't support embedded videos</video>
+                </div>
+
+                <h2 id="t2">Donde Estamos Ubicados</h2>
+                <p id="p2">Estamos ubicados en Alonso de Ovalle con calle Dieciocho</p>
+                <!-- <div class="contenedor-galeria">
+                    <a href="/img/mapa.png" data-lightbox="Historia" data-title="Historia">
+                        <div class="img99" id="mapa"></div>
+                    </a>
+                </div> -->
+
+                <div class="row d-flex align-items-center">
+                    <div class="col-9 col-md-6">
+                        <div class="cont-map"><iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.0754609356895!2d-70.6598352847119!3d-33.447340480774834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c507f91be917%3A0xcfac72a68dd4b986!2sDuoc+UC!5e0!3m2!1ses-419!2scl!4v1539021448187"
+                                width="100%" height="200" frameborder="0" allowfullscreen="allowfullscreen"
+                                style="border: 0px;"></iframe></div>
+                    </div>
+                    <div class="col-9 col-md-4 cont-info mt-3 mt-md-0">
+                        <h2>Sede <br>
+                            PADRE ALONSO DE OVALLE</h2>
+                        <p>Dirección: Padre Alonso de Ovalle 1586, Santiago</p>
+                        <p>Teléfono: 56252132542</p>
+                    </div>
+                </div>
+
+            </div>
+
+           
+
+
+{% endblock content %}

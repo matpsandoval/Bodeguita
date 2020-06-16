@@ -1,0 +1,80 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+{% load static %}
+<link href="{% static 'css/estilosTabla.css' %}" rel="stylesheet">
+
+<body>
+    <div>
+        <form class="centra" class="flot" action="/listarProveedores" method="POST">
+
+            <div>
+                <div>
+                    <div>
+                        <h1>Buscar por Nombre:</h1>
+                    </div >
+
+                    <input type="text" name="nombre" value="{{nombre}}" style="width:100px" />
+                    
+                        <input  class="button" type="submit" value="Buscar">
+                    
+                    
+                </div>
+
+                <div>
+                    <div>
+                        <h1>Buscar por Rut:</h1>
+                    </div>
+
+                    <input type="text" name="rut" value="{{rut}}" style="width:100px" />
+                    <input class="button" type="submit" value="Buscar">
+                </div>
+
+            </div>
+            
+            <br>
+            </br>
+
+
+            {% csrf_token %}
+            <input class="button" action="/listarProveedores" type="submit" value="Mostrar Todos">
+        </form>
+    </div>
+
+
+
+
+
+    {% for c in proveedor %}
+
+    
+
+    <body>
+        
+
+
+
+        <div id="tabla" id="divt">
+            <div class="A" id="divt"><strong>RUT:  </strong>{{c.rut}}</div>
+            <div class="B" id="divt"><strong>Nombre:  </strong>{{c.nombre}}</div>
+            <div class="C" id="divt"><strong>Télefono:  </strong>{{c.telefono}}</div>
+            <div class="D" id="divt"><strong>Domicilio:  </strong>{{c.domicilio}}</div>
+            <div class="E" id="divt"><strong>Región:  </strong>{{c.region}}</div>
+            <div class="F" id="divt"><strong>Comuna:  </strong>{{c.comuna}}</div>
+            
+        </div>
+
+        
+        
+    </body>
+
+    </form>
+
+
+    {% endfor%}
+
+</body>
+{% endblock content %}
+
+
+
